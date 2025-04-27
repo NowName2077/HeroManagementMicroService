@@ -5,7 +5,7 @@ namespace HeroManagementMicroService.Domain.Aggregates.Entities;
 
 public class Hero: Entity<Guid>
 {
-    public ObjectName heroName { get; private set; }
+    public ObjectName HeroName { get; private set; }
 
     protected Hero()
     {
@@ -13,6 +13,6 @@ public class Hero: Entity<Guid>
     }
     protected Hero(Guid id, ObjectName heroName) : base(id)
     {
-        
+        HeroName = heroName ?? throw new ArgumentNullException(nameof(heroName));
     }
 }

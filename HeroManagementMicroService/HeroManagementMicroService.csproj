@@ -8,13 +8,10 @@
 
     <ItemGroup>
       <Folder Include="Application\Modelse\Admin\" />
-      <Folder Include="Application\Modelse\Hero\" />
       <Folder Include="Application\Modelse\Item\" />
-      <Folder Include="Application\Modelse\Player\" />
       <Folder Include="Application\Services\Abstractions\" />
       <Folder Include="Application\Services\Mapping\" />
       <Folder Include="Domain\Services\" />
-      <Folder Include="Infrastructure\EntityFramework\Configurations\" />
       <Folder Include="Infrastructure\EntityFramework\Migrations\" />
       <Folder Include="Infrastructure\MediatR\Commands\" />
       <Folder Include="Infrastructure\MediatR\Handlers\" />
@@ -25,6 +22,11 @@
       <Folder Include="Infrastructure\Repositories\EF\" />
       <Folder Include="Infrastructure\Repositories\InMemory\" />
       <Folder Include="Presentation\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     </ItemGroup>
 
 </Project>
