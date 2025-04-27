@@ -13,9 +13,6 @@
       <Folder Include="Application\Modelse\Player\" />
       <Folder Include="Application\Services\Abstractions\" />
       <Folder Include="Application\Services\Mapping\" />
-      <Folder Include="Domain\Abstractions\" />
-      <Folder Include="Domain\Aggregates\Entities\Base\" />
-      <Folder Include="Domain\Aggregates\Exceptions\" />
       <Folder Include="Domain\Services\" />
       <Folder Include="Infrastructure\EntityFramework\Configurations\" />
       <Folder Include="Infrastructure\EntityFramework\Migrations\" />
