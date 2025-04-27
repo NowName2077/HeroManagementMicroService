@@ -7,9 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Application\Modelse\Ability\" />
       <Folder Include="Application\Modelse\Admin\" />
-      <Folder Include="Application\Modelse\Base\" />
       <Folder Include="Application\Modelse\Hero\" />
       <Folder Include="Application\Modelse\Item\" />
       <Folder Include="Application\Modelse\Player\" />
@@ -19,8 +17,6 @@
       <Folder Include="Domain\Aggregates\Entities\Base\" />
       <Folder Include="Domain\Aggregates\Exceptions\" />
       <Folder Include="Domain\Services\" />
-      <Folder Include="Domain\ValueObjects\Base\" />
-      <Folder Include="Domain\ValueObjects\Exceptions\" />
       <Folder Include="Domain\ValueObjects\Validators\" />
       <Folder Include="Infrastructure\EntityFramework\Configurations\" />
       <Folder Include="Infrastructure\EntityFramework\Migrations\" />
