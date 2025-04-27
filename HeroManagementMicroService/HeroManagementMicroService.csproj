@@ -17,7 +17,6 @@
       <Folder Include="Domain\Aggregates\Entities\Base\" />
       <Folder Include="Domain\Aggregates\Exceptions\" />
       <Folder Include="Domain\Services\" />
-      <Folder Include="Domain\ValueObjects\Validators\" />
       <Folder Include="Infrastructure\EntityFramework\Configurations\" />
       <Folder Include="Infrastructure\EntityFramework\Migrations\" />
       <Folder Include="Infrastructure\MediatR\Commands\" />
