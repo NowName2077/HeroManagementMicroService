@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Application\Modelse\Admin\" />
-      <Folder Include="Application\Modelse\Item\" />
-      <Folder Include="Application\Services\Abstractions\" />
-      <Folder Include="Application\Services\Mapping\" />
       <Folder Include="Domain\Services\" />
       <Folder Include="Infrastructure\EntityFramework\Migrations\" />
       <Folder Include="Infrastructure\MediatR\Commands\" />
