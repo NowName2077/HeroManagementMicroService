@@ -7,9 +7,31 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Application\" />
-      <Folder Include="Domain\" />
-      <Folder Include="Infrastructure\" />
+      <Folder Include="Application\Modelse\Ability\" />
+      <Folder Include="Application\Modelse\Admin\" />
+      <Folder Include="Application\Modelse\Base\" />
+      <Folder Include="Application\Modelse\Hero\" />
+      <Folder Include="Application\Modelse\Item\" />
+      <Folder Include="Application\Modelse\Player\" />
+      <Folder Include="Application\Services\Abstractions\" />
+      <Folder Include="Application\Services\Mapping\" />
+      <Folder Include="Domain\Abstractions\" />
+      <Folder Include="Domain\Aggregates\Entities\Base\" />
+      <Folder Include="Domain\Aggregates\Exceptions\" />
+      <Folder Include="Domain\Services\" />
+      <Folder Include="Domain\ValueObjects\Base\" />
+      <Folder Include="Domain\ValueObjects\Exceptions\" />
+      <Folder Include="Domain\ValueObjects\Validators\" />
+      <Folder Include="Infrastructure\EntityFramework\Configurations\" />
+      <Folder Include="Infrastructure\EntityFramework\Migrations\" />
+      <Folder Include="Infrastructure\MediatR\Commands\" />
+      <Folder Include="Infrastructure\MediatR\Handlers\" />
+      <Folder Include="Infrastructure\MediatR\Mapper\" />
+      <Folder Include="Infrastructure\Queues\Consumers\" />
+      <Folder Include="Infrastructure\Queues\Producers\" />
+      <Folder Include="Infrastructure\RabbitMQ\" />
+      <Folder Include="Infrastructure\Repositories\EF\" />
+      <Folder Include="Infrastructure\Repositories\InMemory\" />
       <Folder Include="Presentation\" />
     </ItemGroup>
 
