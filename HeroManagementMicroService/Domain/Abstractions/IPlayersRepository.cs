@@ -6,7 +6,7 @@ namespace HeroManagementMicroService.Domain.Abstractions;
 //     Task<Player?> GetPlayerByUsernameAsync(string username, CancellationToken cancellationToken);
 // }
 
-public interface IPlayerRepository : IRepository<Player, Guid>
+public interface IPlayersRepository : IRepository<Player, Guid>
 {
     Task<Player?> GetPlayerByUsernameAsync(string username, CancellationToken cancellationToken);
 }

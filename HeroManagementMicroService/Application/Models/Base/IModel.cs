@@ -1,4 +1,4 @@
-﻿namespace HeroManagementMicroService.Application.Modelse.Base;
+﻿namespace HeroManagementMicroService.Application.Models.Base;
 
 public interface IModel<out TId> where TId : struct, IEquatable<TId>
 {
