@@ -1,6 +1,6 @@
-﻿namespace HeroManagement.Domain.ValueObjects;
+﻿using HeroManagement.Domain.ValueObjects.Base;
+using HeroManagement.Domain.ValueObjects.Validators;
 
-public class Username
-{
-    
-}
+namespace HeroManagement.Domain.ValueObjects;
+
+public class Username(string name) : ValueObject<string>(new UsernameValidator(), name);

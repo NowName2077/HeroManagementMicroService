@@ -6,4 +6,14 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="14.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Domain\HeroManagement.Domain.Abstractions\HeroManagement.Domain.Abstractions.csproj" />
+        <ProjectReference Include="..\..\Domain\HeroManagement.Domain.Aggregates\HeroManagement.Domain.Aggregates.csproj" />
+        <ProjectReference Include="..\HeroManagement.Application.Models\HeroManagement.Application.Models.csproj" />
+    </ItemGroup>
+
 </Project>

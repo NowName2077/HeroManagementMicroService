@@ -16,3 +16,9 @@ HeroManagement.Infrastructure.RabbitMQ
 HeroManagement.Infrastructure.Repositories.Implementations
 
 HeroManagement.WebHost
+
+    <ItemGroup>
+        <PackageReference Include="..\..\Domain\" />
+        <PackageReference Include="..\..\Domain\" />
+        <PackageReference Include="..\" />
+    </ItemGroup>

@@ -7,11 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Ability\" />
-      <Folder Include="Admin\" />
-      <Folder Include="Hero\" />
-      <Folder Include="Item\" />
-      <Folder Include="Player\" />
+      <PackageReference Include="AutoMapper" Version="14.0.0" />
     </ItemGroup>
 
 </Project>
