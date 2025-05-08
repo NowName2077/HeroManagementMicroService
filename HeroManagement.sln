@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{CB0DEF80-1C23-4C87-B6A0-1D382D769CEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{D82A2DD7-1A04-4A9C-8C29-AFB6C8C08E20}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{66328C02-741A-4915-BD21-DD3712C37084}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F4285086-C066-44EF-8703-325A19243AE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{3A719A9A-8C48-4315-A672-6A062D4D4150}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroManagement.Domain.Aggregates", "Domain\HeroManagement.Domain.Aggregates\HeroManagement.Domain.Aggregates.csproj", "{1A708B5A-2FA8-4B95-947A-5E582CCCD53A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A708B5A-2FA8-4B95-947A-5E582CCCD53A} = {66328C02-741A-4915-BD21-DD3712C37084}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A708B5A-2FA8-4B95-947A-5E582CCCD53A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A708B5A-2FA8-4B95-947A-5E582CCCD53A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A708B5A-2FA8-4B95-947A-5E582CCCD53A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A708B5A-2FA8-4B95-947A-5E582CCCD53A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
