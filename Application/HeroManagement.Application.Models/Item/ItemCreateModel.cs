@@ -2,4 +2,4 @@
 
 namespace HeroManagement.Application.Models.Item;
 
-public record class ItemCreateModel(Guid Id, string ItemName) : ICreateModel;
+public record class ItemCreateModel(Guid Id, string ObjectName, Guid AdminId) : ICreateModel;

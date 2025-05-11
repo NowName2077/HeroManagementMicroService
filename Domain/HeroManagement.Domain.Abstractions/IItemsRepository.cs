@@ -4,5 +4,5 @@ namespace HeroManagement.Domain.Abstractions;
 
 public interface IItemsRepository : IRepository<Item, Guid>
 {
-    Task<Item?> GetItemByIdAsync(Guid id, CancellationToken cancellationToken);
+    Task<Item?> GetItemByObjectNameAsync(string objectName, CancellationToken cancellationToken);
 }

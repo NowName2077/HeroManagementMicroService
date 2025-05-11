@@ -13,6 +13,11 @@ public class Admin(Guid id, Username username): Entity<Guid>(id)
     
     public Username Username { get; private set; } =  username ?? throw new ArgumentNullValueException(nameof(username));
     
+    //public IReadOnlyCollection<Player> Players => _players;
+    public IReadOnlyCollection<Hero> ActiveHero => _heroes.ToList().AsReadOnly();
+    public IReadOnlyCollection<Item> ActiveItem => _items.ToList().AsReadOnly();
+    public IReadOnlyCollection<Ability> ActiveAbility => _abilities.ToList().AsReadOnly();
+    
     internal bool ChangeUsername(Username newUsername)
     {
         if (Username == newUsername)

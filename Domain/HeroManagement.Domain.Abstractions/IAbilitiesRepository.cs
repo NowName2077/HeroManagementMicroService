@@ -4,5 +4,5 @@ namespace HeroManagement.Domain.Abstractions;
 
 public interface IAbilitiesRepository : IRepository<Ability, Guid>
 {
-    Task<Ability?> GetAbilityByIdAsync(Guid id, CancellationToken cancellationToken);
+    Task<Ability?> GetAbilityByObjectNameAsync(string objectName, CancellationToken cancellationToken);
 }
