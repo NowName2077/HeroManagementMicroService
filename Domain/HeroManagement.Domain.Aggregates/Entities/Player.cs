@@ -24,24 +24,24 @@ public class Player(Guid id, Username username) : Entity<Guid>(id)
         return true;
     }
 
-    public void PickAHero(Hero hero)
-    {
-        if (_observableHeroes.Contains(hero))
-            return;
-        _observableHeroes.Add(hero);
-    }
-
-    public void PickAnItem(Item item)
-    {
-        if (_observableItems.Contains(item))
-            return;
-        _observableItems.Add(item);
-    }
-
-    public void PickAnAbility(Ability ability)
-    {
-        if (_observableAbilities.Contains(ability))
-            return;
-        _observableAbilities.Add(ability);
-    }
+    // public void PickAHero(Hero hero)
+    // {
+    //     if (_observableHeroes.Contains(hero))
+    //         return;
+    //     _observableHeroes.Add(hero);
+    // }
+    //
+    // public void PickAnItem(Item item)
+    // {
+    //     if (_observableItems.Contains(item))
+    //         return;
+    //     _observableItems.Add(item);
+    // }
+    //
+    // public void PickAnAbility(Ability ability)
+    // {
+    //     if (_observableAbilities.Contains(ability))
+    //         return;
+    //     _observableAbilities.Add(ability);
+    // }
 }

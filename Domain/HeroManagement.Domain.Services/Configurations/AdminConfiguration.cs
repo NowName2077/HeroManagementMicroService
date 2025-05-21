@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace HeroManagement.Infrastructure.EntityFramework.Configurations;
 
-public class AbilityConfiguration : IEntityTypeConfiguration<Player>
+public class AdminConfiguration : IEntityTypeConfiguration<Admin>
 {
-    public void Configure(EntityTypeBuilder<Player> builder)
+    public void Configure(EntityTypeBuilder<Admin> builder)
     {
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Id).IsRequired();
@@ -16,6 +16,12 @@ public class AbilityConfiguration : IEntityTypeConfiguration<Player>
             .IsRequired()
             .HasConversion(username => username.Value, str => new Username(str))
             .HasMaxLength(UsernameValidator.MAX_LENGTH);
-        builder.HasMany<>()
+
+        // builder.HasMany(a => a.ActiveHero)
+        //     .WithOne();
+        // builder.HasMany(p => p.ActiveAbility)
+        //     .WithOne();
+        // builder.HasMany(p => p.ActiveItem)
+        //     .WithOne();
     }
 }

@@ -7,23 +7,19 @@ public class Ability : Entity<Guid>
 {
     public ObjectName AbilityName { get; private set; }
     
-    public Admin Admin { get; private set; }
+    //public Admin Admin { get; private set; }
 
     protected Ability()
     {
         
     }
-    // protected Ability(Guid id, ObjectName abilityName, Admin admin) : base(id)
-    // {
-    //     AbilityName = abilityName ?? throw new ArgumentNullException(nameof(abilityName));
-    //     
-    //     Admin = admin ?? throw new ArgumentNullException(nameof(admin));
-    // }
-    
-    public Ability(Guid id, ObjectName abilityName, Admin admin)
+    protected Ability(Guid id, ObjectName abilityName) : base(id)
     {
-        AbilityName = abilityName ?? throw new ArgumentNullException(nameof(abilityName));
-        
-        Admin = admin ?? throw new ArgumentNullException(nameof(admin));
+
+    }
+    
+    public Ability(ObjectName abilityName) : this(Guid.NewGuid(), abilityName)
+    {
+
     }
 }

@@ -3,6 +3,7 @@ using HeroManagement.Application.Models.Ability;
 using HeroManagement.Application.Services.Abstractions;
 using HeroManagement.Domain.Abstractions;
 using HeroManagement.Domain.Aggregates.Entities;
+using HeroManagement.Domain.ValueObjects;
 
 namespace HeroManagement.Application.Services;
 
@@ -26,15 +27,14 @@ public class AbilitiesApplicationService (IAbilitiesRepository abilityRepository
         return ability is null ? null : mapper.Map<AbilityModel>(ability);
     }
 
-    public async Task<AbilityModel?> CreateAbilityAsync(AbilityCreateModel abilityInformation, CancellationToken cancellationToken)
+    public async Task<AbilityModel?> CreateAbilityAsync(AbilityCreateModel abilityInformation, 
+        CancellationToken cancellationToken = default)
     {
-        var admin = await adminsRepository.GetByIdAsync(abilityInformation.AdminId, cancellationToken);
-        if (admin is null) return null;
         
-        if( await abilityRepository.GetByIdAsync(abilityInformation.Id, cancellationToken)is not null)
+        if( await abilityRepository.GetAbilityByObjectNameAsync(abilityInformation.ObjectName, cancellationToken)is not null)
             return null;
         
-        Ability ability = new (abilityInformation.Id, new(abilityInformation.ObjectName), admin);
+        Ability ability = new (new ObjectName(abilityInformation.ObjectName));
         
         var createdAbility = await abilityRepository.AddAsync(ability, cancellationToken);
         return createdAbility is null ? null : mapper.Map<AbilityModel>(createdAbility);

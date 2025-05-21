@@ -7,24 +7,22 @@ public class Item : Entity<Guid>
 {
     public ObjectName ItemName { get;}
 
-    public Admin Admin { get;}
+    //public Admin Admin { get;}
 
     protected Item()
     {
         
     }
-    // protected Item(Guid id, ObjectName itemName, Admin admin) : base(id)
-    // {
-    //     ItemName = itemName ?? throw new ArgumentNullException(nameof(itemName));
-    //     
-    //     Admin = admin ?? throw new ArgumentNullException(nameof(admin));
-    // }
-
-    public Item(Guid id, ObjectName itemName, Admin admin)
+    protected Item(Guid id, ObjectName itemName) : base(id)
     {
         ItemName = itemName ?? throw new ArgumentNullException(nameof(itemName));
-        Admin = admin ?? throw new ArgumentNullException(nameof(admin));
+        
     }
+
+    public Item(ObjectName itemName) : this(Guid.NewGuid(), itemName)
+    {
+    }
+    
 
 
 }

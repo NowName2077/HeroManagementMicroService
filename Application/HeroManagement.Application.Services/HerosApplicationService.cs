@@ -3,6 +3,7 @@ using HeroManagement.Application.Models.Hero;
 using HeroManagement.Application.Services.Abstractions;
 using HeroManagement.Domain.Abstractions;
 using HeroManagement.Domain.Aggregates.Entities;
+using HeroManagement.Domain.ValueObjects;
 
 namespace HeroManagement.Application.Services;
 
@@ -27,15 +28,14 @@ public class HerosApplicationService (IHeroesRepository heroRepository, IAdminsR
         return hero is null ? null : mapper.Map<HeroModel>(hero);
     }
 
-    public async Task<HeroModel?> CreateHeroAsync(HeroCreateModel heroInformation, CancellationToken cancellationToken)
+    public async Task<HeroModel?> CreateHeroAsync(HeroCreateModel heroInformation, 
+        CancellationToken cancellationToken = default)
     {
-        var admin = await adminsRepository.GetByIdAsync(heroInformation.AdminId, cancellationToken);
-        if (admin is null) return null;
-        
-        if( await heroRepository.GetByIdAsync(heroInformation.Id, cancellationToken)is not null)
+
+        if( await heroRepository.GetHeroByObjectNameAsync(heroInformation.ObjectName, cancellationToken)is not null)
             return null;
         
-        Hero hero = new (heroInformation.Id, new(heroInformation.ObjectName), admin);
+        Hero hero = new (new ObjectName(heroInformation.ObjectName));
         
         var createdHero = await heroRepository.AddAsync(hero, cancellationToken);
         return createdHero is null ? null : mapper.Map<HeroModel>(createdHero);

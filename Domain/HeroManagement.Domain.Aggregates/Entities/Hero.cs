@@ -7,24 +7,21 @@ public class Hero : Entity<Guid>
 {
     public ObjectName HeroName { get; private set; }
     
-    public Admin Admin { get; private set; }
+    //public Admin Admin { get; private set; }
 
     protected Hero()
     {
 
     }
 
-    // protected Hero(Guid id, ObjectName heroName, Admin admin) : base(id)
-    // {
-    //     HeroName = heroName ?? throw new ArgumentNullException(nameof(heroName));
-    //     
-    //     Admin = admin ?? throw new ArgumentNullException(nameof(admin));
-    // }
+    protected Hero(Guid id, ObjectName heroName) : base(id)
+     {
+         HeroName = heroName ?? throw new ArgumentNullException(nameof(heroName));
+     }
     
-    public Hero(Guid id, ObjectName heroName, Admin admin)
+    public Hero(ObjectName heroName) : this(Guid.NewGuid(), heroName)
     {
-        HeroName = heroName ?? throw new ArgumentNullException(nameof(heroName));
         
-        Admin = admin ?? throw new ArgumentNullException(nameof(admin));
+        
     }
 }

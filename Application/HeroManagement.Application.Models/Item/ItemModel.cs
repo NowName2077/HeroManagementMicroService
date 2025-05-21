@@ -2,4 +2,4 @@
 
 namespace HeroManagement.Application.Models.Item;
 
-public record class ItemModel(Guid Id, string ObjectName, Guid AdminId) : IModel<Guid>;
+public record class ItemModel(Guid Id, string ObjectName) : IModel<Guid>;

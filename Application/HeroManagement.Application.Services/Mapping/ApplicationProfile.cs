@@ -34,19 +34,19 @@ public class ApplicationProfile : Profile
 
         CreateMap<Hero, HeroModel>()
             .ForMember(dest => dest.ObjectName,
-                opt => opt.MapFrom(src => src.HeroName.Value))
-            .ForMember(dest => dest.AdminId,
-                opt => opt.MapFrom(src => src.Admin.Id));
-        CreateMap<Item, ItemModel>()
-            .ForMember(dest => dest.ObjectName,
-                opt => opt.MapFrom(src => src.ItemName.Value))
-            .ForMember(dest => dest.AdminId,
-                opt => opt.MapFrom(src => src.Admin.Id));
-        CreateMap<Ability, AbilityModel>()
-            .ForMember(dest => dest.ObjectName,
-                opt => opt.MapFrom(src => src.AbilityName.Value))
-            .ForMember(dest => dest.AdminId,
-                opt => opt.MapFrom(src => src.Admin.Id));
+                opt => opt.MapFrom(src => src.HeroName.Value));
+            // .ForMember(dest => dest.AdminId,
+            //     opt => opt.MapFrom(src => src.Admin.Id));
+            CreateMap<Item, ItemModel>()
+                .ForMember(dest => dest.ObjectName,
+                    opt => opt.MapFrom(src => src.ItemName.Value));
+            // .ForMember(dest => dest.AdminId,
+            //     opt => opt.MapFrom(src => src.Admin.Id));
+            CreateMap<Ability, AbilityModel>()
+                .ForMember(dest => dest.ObjectName,
+                    opt => opt.MapFrom(src => src.AbilityName.Value));
+            // .ForMember(dest => dest.AdminId,
+            //     opt => opt.MapFrom(src => src.Admin.Id));
     }
 
 }

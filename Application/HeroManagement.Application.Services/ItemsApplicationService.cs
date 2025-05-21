@@ -4,6 +4,7 @@ using HeroManagement.Application.Models.Item;
 using HeroManagement.Application.Services.Abstractions;
 using HeroManagement.Domain.Abstractions;
 using HeroManagement.Domain.Aggregates.Entities;
+using HeroManagement.Domain.ValueObjects;
 
 namespace HeroManagement.Application.Services;
 
@@ -27,15 +28,15 @@ public class ItemsApplicationService(IItemsRepository itemRepository, IAdminsRep
         return item is null ? null : mapper.Map<ItemModel>(item);
     }
 
-    public async Task<ItemModel?> CreateItemAsync(ItemCreateModel itemInformation, CancellationToken cancellationToken)
+    public async Task<ItemModel?> CreateItemAsync(ItemCreateModel itemInformation, 
+        CancellationToken cancellationToken = default)
     {
-        var admin = await adminsRepository.GetByIdAsync(itemInformation.AdminId, cancellationToken);
-        if (admin is null) return null;
+
         
-        if( await itemRepository.GetByIdAsync(itemInformation.Id, cancellationToken)is not null)
+        if( await itemRepository.GetItemByObjectNameAsync(itemInformation.ObjectName, cancellationToken)is not null)
             return null;
         
-        Item item = new (itemInformation.Id, new(itemInformation.ObjectName), admin);
+        Item item = new (new ObjectName(itemInformation.ObjectName));
         
         var createdItem = await itemRepository.AddAsync(item, cancellationToken);
         return createdItem is null ? null : mapper.Map<ItemModel>(createdItem);

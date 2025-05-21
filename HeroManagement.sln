@@ -32,6 +32,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroManagement.Infrastructu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroManagement.Infrastructure.Repositories.Implementations", "Infrastructure\HeroManagement.Infrastructure.Repositories.Implementations\HeroManagement.Infrastructure.Repositories.Implementations.csproj", "{BDD81814-C21F-43D3-88CD-A31608B9A1CB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{A24D1F26-58B8-4970-8EAF-9FD1F8ADFF36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test\Test.csproj", "{F81C82FB-4DFA-454F-9AC5-4D87B2B61281}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,7 @@ Global
 		{80C3F4B4-27D6-4289-A839-D6B536C45D2E} = {F4285086-C066-44EF-8703-325A19243AE1}
 		{46CA9174-208E-4DE8-BD7F-9BF81A9FE682} = {F4285086-C066-44EF-8703-325A19243AE1}
 		{BDD81814-C21F-43D3-88CD-A31608B9A1CB} = {F4285086-C066-44EF-8703-325A19243AE1}
+		{F81C82FB-4DFA-454F-9AC5-4D87B2B61281} = {A24D1F26-58B8-4970-8EAF-9FD1F8ADFF36}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DDB34CCC-E653-4D48-83D7-59D8A8F2D545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -95,5 +100,9 @@ Global
 		{BDD81814-C21F-43D3-88CD-A31608B9A1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDD81814-C21F-43D3-88CD-A31608B9A1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDD81814-C21F-43D3-88CD-A31608B9A1CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F81C82FB-4DFA-454F-9AC5-4D87B2B61281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F81C82FB-4DFA-454F-9AC5-4D87B2B61281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F81C82FB-4DFA-454F-9AC5-4D87B2B61281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F81C82FB-4DFA-454F-9AC5-4D87B2B61281}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
