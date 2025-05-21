@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\Domain\HeroManagement.Domain.Abstractions\HeroManagement.Domain.Abstractions.csproj"/>
+        <ProjectReference Include="..\..\Domain\HeroManagement.Domain.Aggregates\HeroManagement.Domain.Aggregates.csproj"/>
+        <ProjectReference Include="..\..\Domain\HeroManagement.Domain.Services\HeroManagement.Domain.Services.csproj"/>
+        <ProjectReference Include="..\..\Domain\HeroManagement.Domain.ValueObjects\HeroManagement.Domain.ValueObjects.csproj"/>
+        <ProjectReference Include="..\..\Application\HeroManagement.Application.Models\HeroManagement.Application.Models.csproj"/>
+        <ProjectReference Include="..\..\Application\HeroManagement.Application.Services\HeroManagement.Application.Services.csproj"/>
+    </ItemGroup>
+</Project>
