@@ -15,7 +15,7 @@ public class Ability : Entity<Guid>
     }
     protected Ability(Guid id, ObjectName abilityName) : base(id)
     {
-
+        AbilityName = abilityName ?? throw new ArgumentNullException(nameof(abilityName));
     }
     
     public Ability(ObjectName abilityName) : this(Guid.NewGuid(), abilityName)
