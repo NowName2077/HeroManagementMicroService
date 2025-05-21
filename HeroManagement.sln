@@ -36,6 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{A24D1F26-5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test\Test.csproj", "{F81C82FB-4DFA-454F-9AC5-4D87B2B61281}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroManagement.Web.Host", "Presentation\HeroManagement.Web.Host\HeroManagement.Web.Host.csproj", "{F6CAE7E2-FFF7-445E-A57B-44A3ECD18C41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,7 @@ Global
 		{46CA9174-208E-4DE8-BD7F-9BF81A9FE682} = {F4285086-C066-44EF-8703-325A19243AE1}
 		{BDD81814-C21F-43D3-88CD-A31608B9A1CB} = {F4285086-C066-44EF-8703-325A19243AE1}
 		{F81C82FB-4DFA-454F-9AC5-4D87B2B61281} = {A24D1F26-58B8-4970-8EAF-9FD1F8ADFF36}
+		{F6CAE7E2-FFF7-445E-A57B-44A3ECD18C41} = {3A719A9A-8C48-4315-A672-6A062D4D4150}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DDB34CCC-E653-4D48-83D7-59D8A8F2D545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -104,5 +107,9 @@ Global
 		{F81C82FB-4DFA-454F-9AC5-4D87B2B61281}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F81C82FB-4DFA-454F-9AC5-4D87B2B61281}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F81C82FB-4DFA-454F-9AC5-4D87B2B61281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6CAE7E2-FFF7-445E-A57B-44A3ECD18C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6CAE7E2-FFF7-445E-A57B-44A3ECD18C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6CAE7E2-FFF7-445E-A57B-44A3ECD18C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6CAE7E2-FFF7-445E-A57B-44A3ECD18C41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

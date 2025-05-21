@@ -14,4 +14,11 @@
         <ProjectReference Include="..\..\Application\HeroManagement.Application.Models\HeroManagement.Application.Models.csproj"/>
         <ProjectReference Include="..\..\Application\HeroManagement.Application.Services\HeroManagement.Application.Services.csproj"/>
     </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
+    </ItemGroup>
 </Project>

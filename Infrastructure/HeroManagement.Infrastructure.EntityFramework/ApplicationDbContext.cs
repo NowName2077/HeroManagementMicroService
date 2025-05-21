@@ -13,7 +13,8 @@ public class ApplicationDbContext(DbContextOptions options) : DbContext(options)
 
  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
  {
-   optionsBuilder.EnableSensitiveDataLogging();
+     optionsBuilder.EnableSensitiveDataLogging();
+      // .UseNpgsql(@"host=localhost; port=5433; database=EntityTest; username=postgres; password=13245");
    base.OnConfiguring(optionsBuilder);
  }
 

@@ -22,3 +22,22 @@ HeroManagement.WebHost
         <PackageReference Include="..\..\Domain\" />
         <PackageReference Include="..\" />
     </ItemGroup>
+    
+    
+    
+    HeroManagement.Web.Host
+    
+        <ItemGroup>
+            <PackageReference Include="AutoMapper" Version="14.0.0" />
+            <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+            <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
+                <PrivateAssets>all</PrivateAssets>
+                <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            </PackageReference>
+            <PackageReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
+            <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+        </ItemGroup>
+    
+        <ItemGroup>
+            <ProjectReference Include="..\..\Infrastructure\HeroManagement.Infrastructure.EntityFramework\HeroManagement.Infrastructure.EntityFramework.csproj />"/>
+        </ItemGroup>
