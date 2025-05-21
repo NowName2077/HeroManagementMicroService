@@ -49,9 +49,9 @@ public class Admin(Guid id, Username username): Entity<Guid>(id)
         _items.Add(item);
         return item;
     }
-    public Ability CreateAnAbility(ObjectName objectName)
+    public Ability CreateAnAbility(ObjectName objectName, Guid playerId, Player player)
     {
-        var ability = new Ability(objectName);
+        var ability = new Ability(objectName, playerId, player);
         _abilities.Add(ability);
         return ability;
     }
