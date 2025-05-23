@@ -16,7 +16,5 @@ public class HeroConfiguration : IEntityTypeConfiguration<Hero>
             .IsRequired()
             .HasConversion(heroName => heroName.Value, str => new ObjectName(str))
             .HasMaxLength(ObjectNameValidator.MAX_LENGTH);
-        builder.HasOne<Player>().WithMany(p => p.ObservableHeroes)
-            .HasForeignKey(x => x.Id);
     }
 }

@@ -16,7 +16,5 @@ public class AbilityConfiguration : IEntityTypeConfiguration<Ability>
             .IsRequired()
             .HasConversion(abilityName => abilityName.Value, str => new ObjectName(str))
             .HasMaxLength(ObjectNameValidator.MAX_LENGTH);
-        builder.HasOne<Player>().WithMany(p => p.ObservableAbilities)
-            .HasForeignKey(x => x.Id);
     }
 }

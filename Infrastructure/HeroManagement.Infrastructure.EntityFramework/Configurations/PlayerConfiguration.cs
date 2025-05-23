@@ -16,12 +16,29 @@ public class PlayerConfiguration : IEntityTypeConfiguration<Player>
             .IsRequired()
             .HasConversion(username => username.Value, str => new Username(str))
             .HasMaxLength(UsernameValidator.MAX_LENGTH);
+        builder.HasIndex(x => x.Username).IsUnique();
+
         builder.HasMany(p => p.ObservableHeroes)
-            .WithOne();
+            .WithMany()
+            .UsingEntity<Dictionary<string, object>>("PlayerHero",
+                j => j.HasOne<Hero>().WithMany().HasForeignKey("HeroId"),
+                j => j.HasOne<Player>().WithMany().HasForeignKey("PlayerId")
+            );
+        
         builder.HasMany(p => p.ObservableAbilities)
-            .WithOne();
+            .WithMany()
+            .UsingEntity<Dictionary<string, object>>(
+                "PlayerAbility",
+                j => j.HasOne<Ability>().WithMany().HasForeignKey("AbilityId"),
+                j => j.HasOne<Player>().WithMany().HasForeignKey("PlayerId")
+            );
+        
         builder.HasMany(p => p.ObservableItems)
-            .WithOne();
-        //.HasForeignKey(h => h.Id);
+            .WithMany()
+            .UsingEntity<Dictionary<string, object>>(
+                "PlayerItem",
+                j => j.HasOne<Item>().WithMany().HasForeignKey("ItemId"),
+                j => j.HasOne<Player>().WithMany().HasForeignKey("PlayerId")
+            );
     }
 }

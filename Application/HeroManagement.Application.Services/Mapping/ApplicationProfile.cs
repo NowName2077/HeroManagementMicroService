@@ -21,16 +21,16 @@ public class ApplicationProfile : Profile
                 opt => opt.MapFrom(src => src.ObservableHeroes))
             .ForMember(dest => dest.ObservedAbilities,
                 opt => opt.MapFrom(src => src.ObservableAbilities));
-        
+
         CreateMap<Admin, AdminModel>()
             .ForMember(dest => dest.Username,
-                opt => opt.MapFrom(src => src.Username.Value))
-            .ForMember(dest => dest.Items,
-                opt => opt.MapFrom(src => src.ActiveItem))
-            .ForMember(dest => dest.Heroes,
-                opt => opt.MapFrom(src => src.ActiveHero))
-            .ForMember(dest => dest.Abilities,
-                opt => opt.MapFrom(src => src.ActiveAbility));
+                opt => opt.MapFrom(src => src.Username.Value));
+            // .ForMember(dest => dest.Items,
+            //     opt => opt.MapFrom(src => src.ActiveItem))
+            // .ForMember(dest => dest.Heroes,
+            //     opt => opt.MapFrom(src => src.ActiveHero))
+            // .ForMember(dest => dest.Abilities,
+            //     opt => opt.MapFrom(src => src.ActiveAbility));
 
         CreateMap<Hero, HeroModel>()
             .ForMember(dest => dest.ObjectName,

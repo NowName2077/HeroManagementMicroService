@@ -16,7 +16,5 @@ public class ItemConfiguration : IEntityTypeConfiguration<Item>
             .IsRequired()
             .HasConversion(itemName => itemName.Value, str => new ObjectName(str))
             .HasMaxLength(ObjectNameValidator.MAX_LENGTH);
-        builder.HasOne<Player>().WithMany(p => p.ObservableItems)
-            .HasForeignKey(x => x.Id);
     }
 }
