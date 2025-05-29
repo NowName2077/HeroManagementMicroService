@@ -8,6 +8,11 @@ class Program
 {
     static void Main(string[] args)
     {
-
+        Admin admin = new Admin(Guid.NewGuid(), new Username("Admin"));
+        admin.CreateAHero(new ObjectName("Scout"));
+        admin.CreateAnItem(new ObjectName("Sword"));
+        admin.CreateAnAbility(new ObjectName("Running"));
+        
+        Player player = new Player(Guid.NewGuid(), new Username("Player"));
     }
 }

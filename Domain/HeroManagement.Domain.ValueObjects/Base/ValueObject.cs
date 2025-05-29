@@ -33,5 +33,5 @@ public abstract class ValueObject<T> : IEquatable<ValueObject<T>>
     }
     
     public static bool operator ==(ValueObject<T>? left, ValueObject<T>? right) => Equals(left, right);
-    public static bool operator !=(ValueObject<T>? left, ValueObject<T>? right) => !Equals(left, right);
+    public static bool operator !=(ValueObject<T>? left, ValueObject<T>? right) => !(left == right);
 }
