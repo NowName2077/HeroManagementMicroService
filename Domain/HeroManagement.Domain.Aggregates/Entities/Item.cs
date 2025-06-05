@@ -6,8 +6,7 @@ namespace HeroManagement.Domain.Aggregates.Entities;
 public class Item : Entity<Guid>
 {
     public ObjectName ItemName { get;}
-
-    //public Admin Admin { get;}
+    
 
     protected Item()
     {

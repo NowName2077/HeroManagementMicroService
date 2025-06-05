@@ -23,5 +23,35 @@ public class Player(Guid id, Username username) : Entity<Guid>(id)
         Username = newUsername;
         return true;
     }
-    
+
+    public void AddHero(Hero hero)
+    {
+        if (_observableHeroes.Contains(hero))
+            return;
+        _observableHeroes.Add(hero);
+    }
+    public void RemoveHero(Hero hero)
+    {
+        _observableHeroes.Remove(hero);
+    }
+    public void AddItem(Item item)
+    {
+        if (_observableItems.Contains(item))
+            return;
+        _observableItems.Add(item);
+    }
+    public void RemoveItem(Item item)
+    {
+        _observableItems.Remove(item);
+    }
+    public void AddAbilities(Ability ability)
+    {
+        if (_observableAbilities.Contains(ability))
+            return;
+        _observableAbilities.Add(ability);
+    }
+    public void RemoveAbilily(Ability ability)
+    {
+        _observableAbilities.Remove(ability);
+    }
 }
