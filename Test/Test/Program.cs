@@ -8,35 +8,105 @@ class Program
 {
     static void Main(string[] args)
     {
-        Present();
+        Console.WriteLine("\n=== Boot ===");
+        Console.WriteLine("1. Авто тест");
+        Console.WriteLine("2. Ручной тест");
+        Console.Write("Выберите действие: ");
+        switch (Console.ReadLine())
+        {
+            case "1":
+                AutoPresent();
+                break;
+
+            case "2":
+                Present();
+                break;
+        }
     }
 
     static void Present()
     {
+        ICollection<Hero> heroes = [];
+        ICollection<Item> items = [];
+        ICollection<Ability> abilities = [];
+        
+        Console.WriteLine("\n=== Hero Management System ===");
+        Console.WriteLine("1. Показать все сущности администратора");
+
+        Console.Write("Выберите действие: ");
+
+        switch (Console.ReadLine())
+        {
+            case "1":
+                Admin admin = new Admin(Guid.NewGuid(), new Username("Admin"));
+                Player player = new Player(Guid.NewGuid(), new Username("Player"));
+                break;
+            case "2":
+                string heroName = Console.ReadLine();
+                break;
+        }
+    }
+    static void AutoPresent()
+    {
+        Console.Clear();
+        
         Admin admin = new Admin(Guid.NewGuid(), new Username("Admin"));
         Player player = new Player(Guid.NewGuid(), new Username("Player"));
-        
-        Console.WriteLine($"Creating admin\n{admin.Id}, {admin.Username}");
-        Console.WriteLine($"Creating player\n{player.Id}, {player.Username}");
+
+        //Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.WriteLine($"Creating admin\nID:{admin.Id}\nUsername: {admin.Username}\n");
+        //Console.ForegroundColor = ConsoleColor.DarkGreen;
+        Console.WriteLine($"Creating player\nID:{player.Id}\nUsername: {player.Username}\n");
         
         ICollection<Hero> heroes = [];
         ICollection<Item> items = [];
         ICollection<Ability> abilities = [];
         
+        Console.ForegroundColor = ConsoleColor.DarkBlue;
+        Console.WriteLine($"Creating heroes:");
+        Console.ResetColor();
+
         AddHero(admin,heroes,"Scout");
         AddHero(admin,heroes,"Warrior");
         AddHero(admin,heroes,"Mage");
         AddHero(admin,heroes,"Archer");
+        Console.WriteLine($"******************");
+        foreach (Hero hero in heroes)
+        {
+            Console.WriteLine($"ID:{hero.Id}\nObjectName: {hero.HeroName}");
+        }
         
+        Console.ForegroundColor = ConsoleColor.DarkCyan;
+        Console.WriteLine($"\nCreating items:");
+        Console.ResetColor();
+
         AddItem(admin,items,"Sword");
         AddItem(admin,items,"Bow");
         AddItem(admin,items,"Potion");
         AddItem(admin,items,"Axe");
+        Console.WriteLine($"******************");
+        foreach (Item item in items)
+        {
+            Console.WriteLine($"ID:{item.Id}\nObjectName: {item.ItemName}");
+        }
         
+        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+        Console.WriteLine($"\nCreating abilities:");
+        Console.ResetColor();
+
         AddAbility(admin,abilities,"Running");
         AddAbility(admin,abilities,"Cryomancy");
         AddAbility(admin,abilities,"Night Vision");
         AddAbility(admin,abilities, "Healing");
+        Console.WriteLine($"******************");
+        foreach (Ability ability in abilities)
+        {
+            Console.WriteLine($"ID:{ability.Id}\nObjectName: {ability.AbilityName}");
+        }
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine($"\nSelect objects");
+        Console.ResetColor();
         
         SelectHero(player, heroes, 2);
         SelectItem(player, items, 1);
@@ -44,14 +114,26 @@ class Program
         
         PlayerPrint(player);
         RemoveHero(player, heroes, 2);
+
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine($"\nRemoving heroes");
+        Console.ResetColor();
+        
         PlayerPrint(player);
         SelectHero(player,heroes, 1);
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine($"\nSelect heroes");
+        Console.ResetColor();
+        
         PlayerPrint(player);
     }
 
     static void AddHero(Admin admin, ICollection<Hero> heroes, string heroName)
     {
-        heroes.Add(admin.CreateAHero(new ObjectName(heroName)));
+        var hero = admin.CreateAHero(new ObjectName(heroName));
+        heroes.Add(hero);
+        // Console.WriteLine($"ID:{hero.Id}\nObjectName{hero.HeroName}\n");
     }
     
     static void AddItem(Admin admin, ICollection<Item> items, string itemName)
@@ -93,22 +175,22 @@ class Program
     }
     static void PlayerPrint(Player player)
     {
-        Console.WriteLine($"-------------------");
-        Console.WriteLine($"{player.Id}, {player.Username}");
+        Console.WriteLine($"\n------Player------");
+        Console.WriteLine($"ID:{player.Id}\nUsername: {player.Username}\n");
         
         foreach (Hero hero in player.ObservableHeroes)
         { 
-            Console.WriteLine($"{hero.Id}, {hero.HeroName}");
+            Console.WriteLine($"Hero: {hero.HeroName}");
         }
 
         foreach (Item item in player.ObservableItems)
         {
-            Console.WriteLine($"{item.Id}, {item.ItemName}");
+            Console.WriteLine($"Item: {item.ItemName}");
         }
 
         foreach (Ability ability in player.ObservableAbilities)
         {
-            Console.WriteLine($"{ability.Id}, {ability.AbilityName}");
+            Console.WriteLine($"Ability: {ability.AbilityName}");
         }
     }
 }
