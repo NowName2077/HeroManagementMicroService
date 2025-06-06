@@ -9,7 +9,7 @@ namespace HeroManagement.Application.Services;
 
 public class AdminsApplicationService(IAdminsRepository repository, IMapper mapper) : IAdminApplicationService
 {
-        public async Task<IEnumerable<AdminModel>> GetAdminsAsync(CancellationToken cancellationToken = default) 
+    public async Task<IEnumerable<AdminModel>> GetAdminsAsync(CancellationToken cancellationToken = default) 
         => (await repository.GetAllAsync(cancellationToken = default, true)).Select(mapper.Map<AdminModel>);
 
     public async Task<AdminModel?> GetAdminByIdAsync(Guid id, CancellationToken cancellationToken = default)

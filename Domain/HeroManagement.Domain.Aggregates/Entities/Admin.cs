@@ -7,17 +7,17 @@ namespace HeroManagement.Domain.Aggregates.Entities;
 public class Admin(Guid id, Username username): Entity<Guid>(id)
 {
     // // private readonly ICollection<Player> _players = [];
-     private readonly ICollection<Hero> _heroes = [];
-     private readonly ICollection<Item> _items = [];
-     private readonly ICollection<Ability> _abilities = [];
+     // private readonly ICollection<Hero> _heroes = [];
+     // private readonly ICollection<Item> _items = [];
+     // private readonly ICollection<Ability> _abilities = [];
     
     
     public Username Username { get; private set; } =  username ?? throw new ArgumentNullValueException(nameof(username));
     
     // public IReadOnlyCollection<Player> Players => _players;
-     public IReadOnlyCollection<Hero> ActiveHero => _heroes.ToList().AsReadOnly();
-     public IReadOnlyCollection<Item> ActiveItem => _items.ToList().AsReadOnly();
-     public IReadOnlyCollection<Ability> ActiveAbility => _abilities.ToList().AsReadOnly();
+     // public IReadOnlyCollection<Hero> ActiveHero => _heroes.ToList().AsReadOnly();
+     // public IReadOnlyCollection<Item> ActiveItem => _items.ToList().AsReadOnly();
+     // public IReadOnlyCollection<Ability> ActiveAbility => _abilities.ToList().AsReadOnly();
     
     internal bool ChangeUsername(Username newUsername)
     {
@@ -26,36 +26,39 @@ public class Admin(Guid id, Username username): Entity<Guid>(id)
         Username = newUsername;
         return true;
     }
-
-    public Hero CreateAHero(ObjectName objectName)
-    {
-        var hero = new Hero(objectName);
-        _heroes.Add(hero);
-        return hero;
-    }
-    public void RemoveHero(Hero hero)
-    {
-        _heroes.Remove(hero);
-    }
+    public Hero CreateAHero(ObjectName objectName) => new(objectName);
+    public Item CreateAnItem(ObjectName objectName) => new(objectName);
+    public Ability CreateAnAbility(ObjectName objectName) => new(objectName);
     
-    public Item CreateAnItem(ObjectName objectName)
-    {
-        var item = new Item(objectName);
-        _items.Add(item);
-        return item;
-    }
-    public void RemoveItem(Item item)
-    {
-        _items.Remove(item);
-    }
-    public Ability CreateAnAbility(ObjectName objectName)
-    {
-        var ability = new Ability(objectName);
-        _abilities.Add(ability);
-        return ability;
-    }
-    public void RemoveAbilily(Ability ability)
-    {
-        _abilities.Remove(ability);
-    }
+    // public Hero CreateAHero(ObjectName objectName)
+    // {
+    //     var hero = new Hero(objectName);
+    //     _heroes.Add(hero);
+    //     return hero;
+    // }
+    // public void DeleteAHero(Hero hero)
+    // {
+    //     _heroes.Remove(hero);
+    // }
+    //
+    // public Item CreateAnItem(ObjectName objectName)
+    // {
+    //     var item = new Item(objectName);
+    //     _items.Add(item);
+    //     return item;
+    // }
+    // public void DeleteAnItem(Item item)
+    // {
+    //     _items.Remove(item);
+    // }
+    // public Ability CreateAnAbility(ObjectName objectName)
+    // {
+    //     var ability = new Ability(objectName);
+    //     _abilities.Add(ability);
+    //     return ability;
+    // }
+    // public void DeleteAnAbilily(Ability ability)
+    // {
+    //     _abilities.Remove(ability);
+    // }
 }
