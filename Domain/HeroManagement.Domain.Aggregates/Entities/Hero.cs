@@ -7,7 +7,6 @@ public class Hero : Entity<Guid>
 {
     public ObjectName HeroName { get; private set; }
     
-
     protected Hero()
     {
 

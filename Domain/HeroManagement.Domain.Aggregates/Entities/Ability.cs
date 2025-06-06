@@ -6,9 +6,6 @@ namespace HeroManagement.Domain.Aggregates.Entities;
 public class Ability : Entity<Guid>
 {
     public ObjectName AbilityName { get; private set; }
-    
-    //public Admin Admin { get; private set; }
-
     protected Ability()
     {
         

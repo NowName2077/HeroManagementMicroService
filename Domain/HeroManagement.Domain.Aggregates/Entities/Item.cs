@@ -7,7 +7,6 @@ public class Item : Entity<Guid>
 {
     public ObjectName ItemName { get;}
     
-
     protected Item()
     {
         
